@@ -1,5 +1,6 @@
 import streamlit as st
 import langchain_helper
+import evaluation
 
 st.title("Text Translator")
 
@@ -11,5 +12,8 @@ if language and text:
     translation = langchain_helper.generate_translation(language, text)
     translated = translation['translatedText'].strip()
     st.write(translated)
+    
+    similarity = evaluation.similarity(translated)
+    st.write("Accuracy :",similarity)
         
 # run using "streamlit run app.py"
