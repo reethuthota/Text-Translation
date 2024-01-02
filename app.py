@@ -19,3 +19,5 @@ if from_language and to_language and text:
 
     similarity = evaluation.similarity(translated['translatedText'].strip())
     st.write("Accuracy:", similarity)
+
+# run using "streamlit run app.py"
