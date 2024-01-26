@@ -6,7 +6,7 @@ from secret_key import openapi_key
 import os
 os.environ['OPENAI_API_KEY'] = openapi_key
 
-llm = OpenAI(temperature=0.7)
+llm = OpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
 
 def generate_translation(language, text):
     translation_prompt = PromptTemplate(
